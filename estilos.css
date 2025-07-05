@@ -208,3 +208,22 @@ background-color: #1e1e1e;
         font-size: 1em;
     }
 }
+.carrera-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1c244b;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carrera h3 {
+    margin: 0;
+    font-size: 1.1em;
+    background-color: #e9ecf5;
+    padding: 10px;
+    border-radius: 6px;
+}

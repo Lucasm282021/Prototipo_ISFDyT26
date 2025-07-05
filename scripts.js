@@ -43,23 +43,7 @@ function toggleDarkMode() {
 if (localStorage.getItem('modoOscuro') === 'true') {
     document.body.classList.add('dark-mode');
 }
-document.getElementById('linkCarreras').addEventListener('click', function (e) {
-    e.preventDefault(); // Evita que recargue la página
 
-    fetch('carreras.html')
-        .then(response => {
-            if (!response.ok) throw new Error('No se pudo cargar el contenido');
-            return response.text();
-        })
-        .then(html => {
-            const banner = document.querySelector('.banner');
-            banner.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('Error al cargar carreras.html:', error);
-            document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
-        });
-});
 document.getElementById('linkCarreras').addEventListener('click', function (e) {
     e.preventDefault();
 

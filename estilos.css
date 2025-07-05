@@ -1,25 +1,29 @@
+/* Estilos generales del cuerpo del documento */
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #fdf6e3;
+    background-color: #fdf6e3; /* Fondo color crema */
 }
 
+/* Encabezado principal */
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3e4a7b;
+    background-color: #3e4a7b; /* Azul oscuro */
     color: white;
     padding: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas si es necesario */
     text-align: center;
 }
 
+/* Imagen dentro del encabezado */
 header img {
-height: 120px;
+    height: 120px;
     margin-right: 20px;
 }
 
+/* Barra de navegación fija al hacer scroll */
 .navbar-scroll {
     background-color: #f8f9fa;
     border-bottom: 1px solid #dcdcdc;
@@ -27,9 +31,10 @@ height: 120px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Se mantiene por encima de otros elementos */
 }
 
+/* Contenedor interno de la barra de navegación */
 .nav-scroll-container {
     display: flex;
     align-items: center;
@@ -39,6 +44,7 @@ height: 120px;
     position: relative;
 }
 
+/* Botones para desplazar la barra de navegación horizontalmente */
 .scroll-btn {
     background: none;
     border: none;
@@ -49,14 +55,17 @@ height: 120px;
     transition: color 0.3s ease;
 }
 
+/* Cambio de color al pasar el mouse */
 .scroll-btn:hover {
     color: #1c244b;
 }
 
+/* Oculta el botón si no es necesario */
 .scroll-btn.hidden {
     visibility: hidden;
 }
 
+/* Lista de navegación horizontal con scroll */
 .nav-scroll {
     display: flex;
     overflow-x: auto;
@@ -64,18 +73,21 @@ height: 120px;
     list-style: none;
     margin: 0;
     padding: 0 10px;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
 }
 
+/* Oculta scrollbar en navegadores WebKit */
 .nav-scroll::-webkit-scrollbar {
     display: none;
 }
 
+/* Elementos individuales de la lista */
 .nav-scroll li {
     flex: 0 0 auto;
     margin: 0 6px;
 }
 
+/* Enlaces de navegación */
 .nav-scroll a {
     display: block;
     padding: 8px 16px;
@@ -88,11 +100,13 @@ height: 120px;
     transition: all 0.3s ease;
 }
 
+/* Estilo al pasar el mouse por los enlaces */
 .nav-scroll a:hover {
     background-color: #3e4a7b;
     color: white;
 }
 
+/* Banner principal con imagen de fondo */
 .banner {
     background-image: url('Img/baner_instituto.jpeg');
     background-size: cover;
@@ -104,6 +118,7 @@ height: 120px;
     position: relative;
 }
 
+/* Capa semitransparente encima de la imagen */
 .banner::before {
     content: "";
     position: absolute;
@@ -112,6 +127,7 @@ height: 120px;
     z-index: 0;
 }
 
+/* Animación de entrada para el texto del banner */
 .banner h2, .banner p {
     opacity: 0;
     transform: translateY(20px);
@@ -120,13 +136,15 @@ height: 120px;
     z-index: 1;
 }
 
+/* Definición de la animación */
 @keyframes fadeInUp {
     to {
-    opacity: 1;
-    transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+/* Sección de contacto */
 .contacto {
     background-color: #3e4a7b;
     color: white;
@@ -134,20 +152,23 @@ height: 120px;
     padding: 20px;
 }
 
+/* Enlaces dentro de la sección de contacto */
 .contacto a {
     color: white;
     text-decoration: underline;
 }
 
+/* Pie de página */
 footer {
     background-color: #2c355c;
     color: white;
     text-align: center;
     padding: 15px;
     font-size: 0.9em;
-    }
+}
 
-    footer a {
+/* Enlaces del pie de página */
+footer a {
     color: #e4e7fb;
     text-decoration: none;
 }
@@ -156,11 +177,13 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Estilos para modo oscuro */
 .dark-mode {
-background-color: #1e1e1e;
+    background-color: #1e1e1e;
     color: #f0f0f0;
 }
 
+/* Ajustes de colores en modo oscuro */
 .dark-mode header,
 .dark-mode .navbar-scroll,
 .dark-mode .contacto,
@@ -183,17 +206,20 @@ background-color: #1e1e1e;
     color: #f0f0f0;
 }
 
+/* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         text-align: center;
     }
+
     header img {
         margin: 0 0 10px 0;
     }
+
     .nav-scroll a {
-            padding: 8px 14px;
-            font-size: 0.9em;
+        padding: 8px 14px;
+        font-size: 0.9em;
     }
 
     .banner {
@@ -208,6 +234,8 @@ background-color: #1e1e1e;
         font-size: 1em;
     }
 }
+
+/* Contenedor de lista de carreras */
 .carrera-lista {
     display: flex;
     flex-direction: column;
@@ -220,6 +248,7 @@ background-color: #1e1e1e;
     margin: 0 auto;
 }
 
+/* Título de cada carrera */
 .carrera h3 {
     margin: 0;
     font-size: 1.1em;

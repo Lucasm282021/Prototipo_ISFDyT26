@@ -6,245 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sitio oficial del Instituto Superior de Formación Docente y Técnica N° 26 de Dolores. Información académica, carreras, inscripción y más.">
     <meta name="theme-color" content="#3e4a7b" />
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #fdf6e3;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #3e4a7b;
-            color: white;
-            padding: 10px;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        header img {
-            height: 120px;
-            margin-right: 20px;
-        }
-
-        .navbar-scroll {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #dcdcdc;
-            padding: 10px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-scroll-container {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 10px;
-            position: relative;
-        }
-
-        .scroll-btn {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            color: #3e4a7b;
-            cursor: pointer;
-            padding: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .scroll-btn:hover {
-        color: #1c244b;
-        }
-
-        .scroll-btn.hidden {
-        visibility: hidden;
-        }
-
-        .nav-scroll {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            list-style: none;
-            margin: 0;
-            padding: 0 10px;
-            scrollbar-width: none;
-        }
-
-        .nav-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-scroll li {
-            flex: 0 0 auto;
-            margin: 0 6px;
-        }
-
-        .nav-scroll a {
-            display: block;
-            padding: 8px 16px;
-            font-size: 0.95em;
-            font-weight: 500;
-            color: #3e4a7b;
-            background-color: #e9ecf5;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .nav-scroll a:hover {
-            background-color: #3e4a7b;
-            color: white;
-        }
-
-        .banner {
-        background-image: url('Img/baner_instituto.jpeg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-        text-align: center;
-        padding: 100px 20px;
-        position: relative;
-        }
-
-        .banner::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(206, 206, 206, 0.4);
-            z-index: 0;
-        }
-
-        .banner h2, .banner p {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .contacto {
-            background-color: #3e4a7b;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .contacto a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #2c355c;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: #e4e7fb;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .dark-mode {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
-        }
-
-        .dark-mode header,
-        .dark-mode .navbar-scroll,
-        .dark-mode .contacto,
-        .dark-mode footer {
-            background-color: #2c2c2c;
-            color: #f0f0f0;
-        }
-
-        .dark-mode .nav-scroll a {
-            background-color: #444;
-            color: #f0f0f0;
-        }
-
-        .dark-mode .nav-scroll a:hover {
-            background-color: #666;
-            color: white;
-        }
-
-        .dark-mode .scroll-btn {
-            color: #f0f0f0;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                    flex-direction: column;
-                text-align: center;
-            }
-            header img {
-            margin: 0 0 10px 0;
-        }
-
-        .nav-scroll a {
-            padding: 8px 14px;
-            font-size: 0.9em;
-        }
-
-        .banner {
-            padding: 60px 15px;
-        }
-
-        .banner h2 {
-            font-size: 1.8em;
-        }
-
-        .banner p {
-            font-size: 1em;
-        }
-        }
-    </style>
-    </head>
-    <body>
-        <header>
-            <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
-            <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+    <header>
+        <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
+        <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
     </header>
 
     <nav class="navbar-scroll">
         <div class="nav-scroll-container">
-        <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
-        <ul class="nav-scroll" id="scrollMenu">
-            <li><a href="#">🏠 Inicio</a></li>
-            <li><a href="#">🎓 Carreras</a></li>
-            <li><a href="#">📚 Oferta Académica 2025</a></li>
-            <li><a href="#">📝 Inscripción 2025</a></li>
-            <li><a href="#">💻 Campus Virtual</a></li>
-            <li><a href="#">👨‍🎓 Alumnos</a></li>
-            <li><a href="#">👩‍🏫 Docentes</a></li>
-            <li><a href="#">🖼️ Galería de Imágenes</a></li>
-            <li><a href="#">📞 Contacto</a></li>
-            <li><a href="#">🔍 CI 26</a></li>
-            <li><a href="#">📻 Radio 26</a></li>
-            <li><a href="#">📋 Consejo Académico Institucional</a></li>
-            <li><a href="#">🔗 Clases Virtuales 2025</a></li>
-        </ul>
-        <button class="scroll-btn right" id="btnRight" aria-label="Desplazar a la derecha">▶</button>
+            <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
+            <ul class="nav-scroll" id="scrollMenu">
+                <li><a href="#">🏠 Inicio</a></li>
+                <li><a href="#">🎓 Carreras</a></li>
+                <li><a href="#">📚 Oferta Académica 2025</a></li>
+                <li><a href="#">📝 Inscripción 2025</a></li>
+                <li><a href="#">💻 Campus Virtual</a></li>
+                <li><a href="#">👨‍🎓 Alumnos</a></li>
+                <li><a href="#">👩‍🏫 Docentes</a></li>
+                <li><a href="#">🖼️ Galería de Imágenes</a></li>
+                <li><a href="#">📞 Contacto</a></li>
+                <li><a href="#">🔍 CI 26</a></li>
+                <li><a href="#">📻 Radio 26</a></li>
+                <li><a href="#">📋 Consejo Académico Institucional</a></li>
+                <li><a href="#">🔗 Clases Virtuales 2025</a></li>
+            </ul>
+            <button class="scroll-btn right" id="btnRight" aria-label="Desplazar a la derecha">▶</button>
         </div>
     </nav>
 
@@ -263,57 +51,9 @@
     <footer>
         <p>&copy; 2025 ISFDyT N°26 - Todos los derechos reservados</p>
         <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
-        <button onclick="toggleDarkMode()" style="margin-top:10px; padding:6px 12px; border:none; background:#e4e7fb; color:#3e4a7b; border-radius:20px; cursor:pointer;">🌙 Modo Oscuro</button>
+        <button onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
     </footer>
 
-    <script>
-        const scrollMenu = document.getElementById('scrollMenu');
-        const btnLeft = document.getElementById('btnLeft');
-        const btnRight = document.getElementById('btnRight');
-
-        function scrollLeft() {
-            scrollMenu.scrollBy({ left: -200, behavior: 'smooth' });
-        }
-
-        function scrollRight() {
-            scrollMenu.scrollBy({ left: 200, behavior: 'smooth' });
-        }
-
-        btnLeft.addEventListener('click', scrollLeft);
-        btnRight.addEventListener('click', scrollRight);
-        
-        const observerOptions = { root: scrollMenu, threshold: 1.0 };
-        const leftSentinel = document.createElement('li');
-        
-        leftSentinel.style.width = '1px';
-        scrollMenu.insertBefore(leftSentinel, scrollMenu.firstChild);
-
-        const rightSentinel = document.createElement('li');
-        rightSentinel.style.width = '1px';
-        scrollMenu.appendChild(rightSentinel);
-
-        const leftObserver = new IntersectionObserver((entries) => {
-            btnLeft.classList.toggle('hidden', entries[0].isIntersecting);
-        }, observerOptions);
-
-        const rightObserver = new IntersectionObserver((entries) => {
-            btnRight.classList.toggle('hidden', entries[0].isIntersecting);
-        }, observerOptions);
-
-        leftObserver.observe(leftSentinel);
-        rightObserver.observe(rightSentinel);
-    </script>
-
-    <!-- Script para modo oscuro -->
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode'));
-        }
-
-        if (localStorage.getItem('modoOscuro') === 'true') {
-            document.body.classList.add('dark-mode');
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>

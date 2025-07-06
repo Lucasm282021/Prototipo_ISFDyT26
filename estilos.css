@@ -1,29 +1,28 @@
-/* Estilos generales del cuerpo del documento */
+/* ESTILOS GENERALES */
 body {
     margin: 0;
     font-family: sans-serif;
     background-color: #fdf6e3; /* Fondo color crema */
 }
 
-/* Encabezado principal */
+/* ENCABEZADO */
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3e4a7b; /* Azul oscuro */
+    background-color: #3e4a7b;
     color: white;
     padding: 10px;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas si es necesario */
+    flex-wrap: wrap;
     text-align: center;
 }
 
-/* Imagen dentro del encabezado */
 header img {
     height: 120px;
     margin-right: 20px;
 }
 
-/* Barra de navegación fija al hacer scroll */
+/* BARRA DE NAVEGACIÓN */
 .navbar-scroll {
     background-color: #f8f9fa;
     border-bottom: 1px solid #dcdcdc;
@@ -31,10 +30,9 @@ header img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Se mantiene por encima de otros elementos */
+    z-index: 1000;
 }
 
-/* Contenedor interno de la barra de navegación */
 .nav-scroll-container {
     display: flex;
     align-items: center;
@@ -44,7 +42,6 @@ header img {
     position: relative;
 }
 
-/* Botones para desplazar la barra de navegación horizontalmente */
 .scroll-btn {
     background: none;
     border: none;
@@ -55,17 +52,14 @@ header img {
     transition: color 0.3s ease;
 }
 
-/* Cambio de color al pasar el mouse */
 .scroll-btn:hover {
     color: #1c244b;
 }
 
-/* Oculta el botón si no es necesario */
 .scroll-btn.hidden {
     visibility: hidden;
 }
 
-/* Lista de navegación horizontal con scroll */
 .nav-scroll {
     display: flex;
     overflow-x: auto;
@@ -73,40 +67,45 @@ header img {
     list-style: none;
     margin: 0;
     padding: 0 10px;
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    scrollbar-width: none;
 }
 
-/* Oculta scrollbar en navegadores WebKit */
 .nav-scroll::-webkit-scrollbar {
     display: none;
 }
 
-/* Elementos individuales de la lista */
 .nav-scroll li {
     flex: 0 0 auto;
     margin: 0 6px;
 }
 
-/* Enlaces de navegación */
 .nav-scroll a {
-    display: block;
-    padding: 8px 16px;
-    font-size: 0.95em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.9em;
     font-weight: 500;
     color: #3e4a7b;
     background-color: #e9ecf5;
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
+    min-width: 80px;
 }
 
-/* Estilo al pasar el mouse por los enlaces */
+.nav-scroll a span {
+    margin-top: 4px;
+    font-size: 0.8em;
+}
+
 .nav-scroll a:hover {
     background-color: #3e4a7b;
     color: white;
 }
 
-/* Banner principal con imagen de fondo */
+/*  BANNER PRINCIPAL */
 .banner {
     background-image: url('Img/baner_instituto.jpeg');
     background-size: cover;
@@ -116,9 +115,17 @@ header img {
     text-align: center;
     padding: 100px 20px;
     position: relative;
-    min-height: 100vh; /* NUEVO: asegura que el banner ocupe toda la altura de la ventana */
-    box-sizing: border-box; /* Asegura que el padding no sume altura extra */
-}  
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(206, 206, 206, 0.4);
+    z-index: 0;
+}
 
 .banner-contenido {
     display: flex;
@@ -130,9 +137,9 @@ header img {
     flex-wrap: wrap;
     text-align: left;
 }
-/* Logo-Banner */
+
 .logo-banner {
-    width: 150px;     /* Escala el logo */
+    width: 150px;
     height: auto;
     margin-right: 20px;
 }
@@ -155,25 +162,13 @@ header img {
     background-color: #2c355c;
 }
 
-/* Capa semitransparente encima de la imagen */
-.banner::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(206, 206, 206, 0.4);
-    z-index: 0;
-}
-
-/* Animación de entrada para el texto del banner */
-.banner h2, .banner p {
+.banner.animado h2,
+.banner.animado p {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
-    position: relative;
-    z-index: 1;
 }
 
-/* Definición de la animación */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -181,7 +176,46 @@ header img {
     }
 }
 
-/* Sección de contacto */
+/* SECCIÓN DE CARRERAS (MODERNA) */
+.carreras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-top: 20px;
+    color: #1c244b;
+}
+
+.carrera-card {
+    background-color: #f0f3fa;
+    border-left: 6px solid #3e4a7b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.carrera-card:hover {
+    transform: translateY(-5px);
+}
+
+.carrera-card h3 {
+    margin-top: 0;
+    color: #3e4a7b;
+}
+
+.carrera-card ul {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+}
+
+.carrera-card ul li {
+    margin-bottom: 6px;
+}
+
+/* SECCIÓN DE CONTACTO */
 .contacto {
     background-color: #3e4a7b;
     color: white;
@@ -189,13 +223,12 @@ header img {
     padding: 20px;
 }
 
-/* Enlaces dentro de la sección de contacto */
 .contacto a {
     color: white;
     text-decoration: underline;
 }
 
-/* Pie de página */
+/* PIE DE PÁGINA */
 footer {
     background-color: #2c355c;
     color: white;
@@ -204,7 +237,6 @@ footer {
     font-size: 0.9em;
 }
 
-/* Enlaces del pie de página */
 footer a {
     color: #e4e7fb;
     text-decoration: none;
@@ -214,13 +246,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Estilos para modo oscuro */
+/* MODO OSCURO */
 .dark-mode {
     background-color: #1e1e1e;
     color: #f0f0f0;
 }
 
-/* Ajustes de colores en modo oscuro */
 .dark-mode header,
 .dark-mode .navbar-scroll,
 .dark-mode .contacto,
@@ -243,7 +274,7 @@ footer a:hover {
     color: #f0f0f0;
 }
 
-/* Estilos responsivos para pantallas pequeñas */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -281,57 +312,7 @@ footer a:hover {
     }
 }
 
-
-/* Contenedor de lista de carreras */
-.carrera-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #1c244b;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Título de cada carrera */
-.carrera h3 {
-    margin: 0;
-    font-size: 1.1em;
-    background-color: #e9ecf5;
-    padding: 10px;
-    border-radius: 6px;
-}
-
-/* Estilo para íconos con texto en vertical */
-.nav-scroll a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 14px;
-    font-size: 0.9em;
-    font-weight: 500;
-    color: #3e4a7b;
-    background-color: #e9ecf5;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 80px;
-}
-
-.nav-scroll a span {
-    margin-top: 4px;
-    font-size: 0.8em;
-}
-
-/* Hover */
-.nav-scroll a:hover {
-    background-color: #3e4a7b;
-    color: white;
-}
-/* Oculta carreras dentro del banner */
+/* UTILIDADES */
 .oculto {
     display: none;
 }

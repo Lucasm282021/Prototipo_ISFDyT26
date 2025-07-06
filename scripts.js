@@ -45,7 +45,7 @@ if (localStorage.getItem('modoOscuro') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
-// Carga dinámica de carreras.html
+// Carga dinámica de carreras.html desde el botón del menú
 document.getElementById('linkCarreras').addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -56,6 +56,7 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
         })
         .then(html => {
             const banner = document.querySelector('.banner');
+            banner.classList.remove('animado'); // Evita animación en contenido cargado
             banner.innerHTML = html;
             banner.style.backgroundImage = "url('Img/baner_instituto.jpeg')";
             banner.style.backgroundSize = "cover";
@@ -67,17 +68,4 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
             console.error('Error al cargar carreras.html:', error);
             document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
         });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const botonCarreras = document.querySelector(".btn-banner");
-    const seccionCarreras = document.getElementById("carreras");
-
-    if (botonCarreras && seccionCarreras) {
-        botonCarreras.addEventListener("click", function (e) {
-            e.preventDefault();
-            seccionCarreras.classList.toggle("oculto");
-            seccionCarreras.scrollIntoView({ behavior: "smooth" });
-        });
-    }
 });

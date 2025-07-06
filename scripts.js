@@ -68,3 +68,16 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
             document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
         });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const botonCarreras = document.querySelector(".btn-banner");
+    const seccionCarreras = document.getElementById("carreras");
+
+    if (botonCarreras && seccionCarreras) {
+        botonCarreras.addEventListener("click", function (e) {
+            e.preventDefault();
+            seccionCarreras.classList.toggle("oculto");
+            seccionCarreras.scrollIntoView({ behavior: "smooth" });
+        });
+    }
+});

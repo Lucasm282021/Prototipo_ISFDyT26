@@ -19,7 +19,7 @@
             <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
             <ul class="nav-scroll" id="scrollMenu">
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="" id="linkCarreras">🎓 Carreras</a></li>
+                <li><a href="#carreras" id="linkCarreras">🎓 Carreras</a></li>
                 <li><a href="#">📚 Oferta Académica 2025</a></li>
                 <li><a href="#">📝 Inscripción 2025</a></li>
                 <li><a href="#">💻 Login</a></li>
@@ -32,18 +32,41 @@
     </nav>
 
     <section class="banner">
-        <img src="Img/logo26.png" alt="Logo ISFDyT N°26" class="logo-banner" />
-        <h2>🎓 50 Años </h2> 
-        <p>Comprometidos con la Educación Pública</p>
+        <div class="banner-contenido">
+            <img src="Img/logo26.png" alt="Logo del Instituto ISFDyT N°26" class="logo-banner">
+            <div>
+                <h2>🎓 50 Años</h2>
+                <p>Comprometidos con la Educación Pública</p>
+                <a href="#carreras" class="btn-banner">Ver carreras</a>
+                <!-- Carreras dentro del banner -->
+                <div class="carrera-lista oculto" id="carreras">
+                    <div class="carrera">
+                        <h3>Profesorado de Educación Inicial</h3>
+                        <p>Duración: 4 años</p>
+                    </div>
+                    <div class="carrera">
+                        <h3>Tecnicatura en Análisis de Sistemas</h3>
+                        <p>Duración: 3 años</p>
+                    </div>
+                    <div class="carrera">
+                        <h3>Profesorado de Educación Secundaria en Historia</h3>
+                        <p>Duración: 4 años</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!--    <section class="contacto">
+    <!-- Sección de contacto (comentada) -->
+    <!--
+    <section class="contacto">
         <p>Horarios de atención: 18:20 a 22:20 hs.</p>
         <p>Dirección: Marquez 51</p>
         <p>Email: <a href="mailto:instituto26@gmail.com">instituto26@gmail.com</a></p>
         <p>Facebook: <a href="https://www.facebook.com/isfdyt.dolores">facebook.com/isfdyt.dolores</a></p>
     </section>
--->
+    -->
+
     <footer>
         <p>&copy; 2025 ISFDyT N°26 - Todos los derechos reservados</p>
         <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>

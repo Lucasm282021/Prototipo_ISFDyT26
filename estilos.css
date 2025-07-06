@@ -118,8 +118,24 @@ header img {
     position: relative;
     min-height: 100vh; /* NUEVO: asegura que el banner ocupe toda la altura de la ventana */
     box-sizing: border-box; /* Asegura que el padding no sume altura extra */
-}       
+}  
 
+.banner-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    text-align: left;
+}
+/* Logo-Banner */
+.logo-banner {
+    width: 150px;     /* Escala el logo */
+    height: auto;
+    margin-right: 20px;
+}
 /* Capa semitransparente encima de la imagen */
 .banner::before {
     content: "";
@@ -137,12 +153,7 @@ header img {
     position: relative;
     z-index: 1;
 }
-/* Logo-Banner */
-.logo-banner {
-    width: 150px;     /* Escala el logo */
-    height: auto;
-    margin-right: 20px;
-}
+
 /* Definición de la animación */
 @keyframes fadeInUp {
     to {
@@ -240,7 +251,17 @@ footer a:hover {
     .banner p {
         font-size: 1em;
     }
+
+    .banner-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-banner {
+        margin: 0 0 20px 0;
+    }
 }
+
 
 /* Contenedor de lista de carreras */
 .carrera-lista {

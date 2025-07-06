@@ -1,208 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>ISFDyT N°26 - Página Principal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encabezado y Navegación</title>
+  <style>
     body {
-        margin: 0;
-        font-family: sans-serif;
-        background-color: #fdf6e3;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #3e4a7b;
-        color: white;
-        padding: 10px;
-        flex-wrap: wrap;
-        text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
-    header img {
-        height: 120px;
-        margin-right: 20px;
+    nav {
+      background-color: #444;
     }
 
-    .navbar-scroll {
-        background-color: #ffffff;
-        padding: 12px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
     }
 
-    .nav-scroll-container {
-        display: flex;
-        align-items: center;
-        position: relative;
+    nav li {
+      margin: 0 15px;
     }
 
-    .scroll-btn {
-        background-color: #f0f0f0;
-        border: none;
-        font-size: 1.2em;
-        padding: 5px 10px;
-        cursor: pointer;
-        color: #3e4a7b;
-        z-index: 1;
+    nav a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
     }
 
-    .scroll-btn.hidden {
-        visibility: hidden;
+    nav a:hover {
+      background-color: #666;
     }
-
-    .nav-scroll {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding: 0 10px;
-        list-style: none;
-        margin: 0;
-    }
-
-    .nav-scroll::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-scroll li {
-        flex: 0 0 auto;
-        margin: 0 6px;
-    }
-
-    .nav-scroll a {
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 30px;
-        background-color: #e4e7fb;
-        color: #3e4a7b;
-        font-weight: bold;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-    }
-
-    .nav-scroll a:hover {
-        background-color: #3e4a7b;
-        color: white;
-    }
-
-    .banner {
-    background-image: url('img/baner_instituto.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    }
-
-.banner::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(206, 206, 206, 0.4);
-    z-index: 0;
-    }
-
-.banner h2, .banner p {
-    position: relative;
-    z-index: 1;
-    }
- 
-    .contacto {
-        background-color: #3e4a7b;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .contacto a {
-        color: white;
-        text-decoration: underline;
-    }
-    </style>
+  </style>
 </head>
 <body>
-    <header>
-    <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
-    <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
-    </header>
 
-    <nav class="navbar-scroll">
-    <div class="nav-scroll-container">
-        <button class="scroll-btn left" id="btnLeft">◀</button>
-        <ul class="nav-scroll" id="scrollMenu">
-            <li><a href="#">🏠 Inicio</a></li>
-            <li><a href="#">🎓 Carreras</a></li>
-            <li><a href="#">📚 Oferta Académica 2025</a></li>
-            <li><a href="#">📝 Inscripción 2025</a></li>
-            <li><a href="#">💻 Campus Virtual</a></li>
-            <li><a href="#">👨‍🎓 Alumnos</a></li>
-            <li><a href="#">👩‍🏫 Docentes</a></li>
-            <li><a href="#">🖼️ Galería de Imágenes</a></li>
-            <li><a href="#">📞 Contacto</a></li>
-            <li><a href="#">🔍 CI 26</a></li>
-            <li><a href="#">📻 Radio 26</a></li>
-            <li><a href="#">🧑‍🏫 Clases Abiertas 2024</a></li>
-            <li><a href="#">📋 Consejo Académico Institucional</a></li>
-            <li><a href="#">🔗 Clases Virtuales 2025</a></li>
-        </ul>
-        <button class="scroll-btn right" id="btnRight">▶</button>
-    </div>
-    </nav>
+  <header>
+    <h1>Mi Sitio Web</h1>
+  </header>
 
-    <section class="banner">
-        <h2>🎓 50 Años</h2>
-        <p>Comprometidos con la Educación Pública</p>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Sobre mí</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
 
-    <section class="contacto">
-        <p>Horarios de atención: 18:20 a 22:20 hs.</p>
-        <p>Dirección: Marquez 51</p>
-        <p>Email: <a href="mailto:instituto26@gmail.com">instituto26@gmail.com</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/isfdyt.dolores">facebook.com/isfdyt.dolores</a></p>
-    </section>
-
-    <script>
-        const scrollMenu = document.getElementById('scrollMenu');
-        const btnLeft = document.getElementById('btnLeft');
-        const btnRight = document.getElementById('btnRight');
-
-    function scrollLeft() {
-        scrollMenu.scrollBy({ left: -200, behavior: 'smooth' });
-    }
-
-    function scrollRight() {
-        scrollMenu.scrollBy({ left: 200, behavior: 'smooth' });
-    }
-
-    btnLeft.addEventListener('click', scrollLeft);
-    btnRight.addEventListener('click', scrollRight);
-
-    // IntersectionObserver para mostrar/ocultar botones según scroll
-    const observerOptions = { root: scrollMenu, threshold: 1.0 };
-
-    const leftSentinel = document.createElement('li');
-    leftSentinel.style.width = '1px';
-    scrollMenu.insertBefore(leftSentinel, scrollMenu.firstChild);
-
-    const rightSentinel = document.createElement('li');
-    rightSentinel.style.width = '1px';
-    scrollMenu.appendChild(rightSentinel);
-
-    const leftObserver = new IntersectionObserver((entries) => {
-        btnLeft.classList.toggle('hidden', entries[0].isIntersecting);
-    }, observerOptions);
-
-    const rightObserver = new IntersectionObserver((entries) => {
-        btnRight.classList.toggle('hidden', entries[0].isIntersecting);
-    }, observerOptions);
-
-        leftObserver.observe(leftSentinel);
-        rightObserver.observe(rightSentinel);
-    </script>
 </body>
 </html>

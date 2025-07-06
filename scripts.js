@@ -35,16 +35,6 @@ const rightObserver = new IntersectionObserver((entries) => {
 leftObserver.observe(leftSentinel);
 rightObserver.observe(rightSentinel);
 
-// Barra de progreso
-scrollMenu.addEventListener('scroll', () => {
-    const progressBar = document.getElementById('scrollProgressBar');
-    if (progressBar) {
-        const maxScrollLeft = scrollMenu.scrollWidth - scrollMenu.clientWidth;
-        const scrollPercentage = (scrollMenu.scrollLeft / maxScrollLeft) * 100;
-        progressBar.style.width = `${scrollPercentage}%`;
-    }
-});
-
 // Modo oscuro
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');

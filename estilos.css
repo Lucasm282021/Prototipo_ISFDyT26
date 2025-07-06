@@ -137,7 +137,12 @@ header img {
     position: relative;
     z-index: 1;
 }
-
+/* Logo-Banner */
+.logo-banner {
+    width: 220px;     /* Escala el logo */
+    height: auto;
+    margin-right: 20px;
+}
 /* Definición de la animación */
 @keyframes fadeInUp {
     to {

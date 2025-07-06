@@ -116,7 +116,9 @@ header img {
     text-align: center;
     padding: 100px 20px;
     position: relative;
-}
+    min-height: 100vh; /* NUEVO: asegura que el banner ocupe toda la altura de la ventana */
+    box-sizing: border-box; /* Asegura que el padding no sume altura extra */
+}       
 
 /* Capa semitransparente encima de la imagen */
 .banner::before {

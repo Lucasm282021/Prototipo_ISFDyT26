@@ -14,6 +14,7 @@ function scrollRight() {
 btnLeft.addEventListener('click', scrollLeft);
 btnRight.addEventListener('click', scrollRight);
 
+// Ocultar botones si se llega al extremo
 const observerOptions = { root: scrollMenu, threshold: 1.0 };
 const leftSentinel = document.createElement('li');
 leftSentinel.style.width = '1px';
@@ -34,6 +35,16 @@ const rightObserver = new IntersectionObserver((entries) => {
 leftObserver.observe(leftSentinel);
 rightObserver.observe(rightSentinel);
 
+// Barra de progreso
+scrollMenu.addEventListener('scroll', () => {
+    const progressBar = document.getElementById('scrollProgressBar');
+    if (progressBar) {
+        const maxScrollLeft = scrollMenu.scrollWidth - scrollMenu.clientWidth;
+        const scrollPercentage = (scrollMenu.scrollLeft / maxScrollLeft) * 100;
+        progressBar.style.width = `${scrollPercentage}%`;
+    }
+});
+
 // Modo oscuro
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -44,6 +55,7 @@ if (localStorage.getItem('modoOscuro') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
+// Carga dinámica de carreras.html
 document.getElementById('linkCarreras').addEventListener('click', function (e) {
     e.preventDefault();
 

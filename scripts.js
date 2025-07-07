@@ -71,16 +71,20 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
 });
 function cambiarImagen(elemento) {
     const imagenActiva = document.getElementById("imagenActiva");
-    imagenActiva.src = elemento.src;
 
+    // Aplica desvanecido
+    imagenActiva.style.opacity = 0;
+
+    // Espera a que se desvanezca antes de cambiar la imagen
+    setTimeout(() => {
+        imagenActiva.src = elemento.src;
+        imagenActiva.style.opacity = 1;
+    }, 200);
+
+    // Actualiza miniaturas activas
     document.querySelectorAll(".miniaturas img").forEach(img => {
         img.classList.remove("activa");
     });
     elemento.classList.add("activa");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-    const primera = document.querySelector(".miniaturas img");
-        if (primera) primera.classList.add("activa");
-});
+}
 

@@ -108,7 +108,7 @@ header img {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(206, 206, 206, 0.4);
+    background: rgba(0, 0, 0, 0.05);
     z-index: 0;
 }
 .banner-contenido {
@@ -412,4 +412,31 @@ footer a:hover {
     max-height: 180px;
     object-fit: cover;
     border-radius: 6px;
+}
+/* ESTILO DE TEXTO UNIFICADO Y JERARQUIZADO */
+.info-institucional,
+.noticias,
+.galeria-destacada {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #1c244b;
+}
+.info-institucional p,
+.noticias ul li,
+.galeria-destacada p {
+    margin-bottom: 12px;
+}
+.info-institucional strong,
+.noticias ul li strong {
+    font-weight: 600;
+    color: #2c355c;
+}
+.noticias h2,
+.galeria-destacada h3,
+.info-institucional h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #3e4a7b;
+    margin-bottom: 14px;
 }

@@ -206,29 +206,9 @@ header img {
     overflow: hidden;
     border-radius: 12px;
 }
-.slider {
-    display: flex;
-    width: 300%;
-    animation: deslizar 12s infinite;
-}
-@keyframes deslizar {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-}
+
 /* Responsive para pantallas pequeñas */
-@media (max-width: 600px) {
-    .slider img {
-        height: 140px;
-    }
-    .galeria-destacada {
-        padding: 16px;
-    }
-    .galeria-destacada h3 {
-        font-size: 1em;
-    }
-}
+
 .como-llegar {
     margin-top: 16px;
 }
@@ -242,9 +222,14 @@ header img {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    height: 160px;
+    aspect-ratio: 16 / 9;
+    max-height: 360px;
+    position: relative;
+    z-index: 2;
 }
 .mapa iframe {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     border: 0;
@@ -393,7 +378,6 @@ footer a:hover {
     flex-direction: column;
     gap: 20px;
 }
-
 .banner-contenido {
     display: flex;
     flex-wrap: wrap;
@@ -401,11 +385,9 @@ footer a:hover {
     align-items: flex-start;
     justify-content: center;
 }
-
 .info-institucional {
     flex: 1 1 50%;
 }
-
 .galeria-banner img {
     width: 100%;
     height: auto;
@@ -439,4 +421,35 @@ footer a:hover {
     font-weight: 700;
     color: #3e4a7b;
     margin-bottom: 14px;
+}
+/* SLIDER CON MINIATURAS */
+.slider-con-miniaturas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.imagen-principal img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.miniaturas {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.miniaturas img {
+    width: 60px;
+    height: 45px;
+}
+
+.miniaturas img:hover,
+.miniaturas img.activa {
+    opacity: 1;
+    transform: scale(1.05);
+    border: 2px solid #3e4a7b;
 }

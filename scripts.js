@@ -69,3 +69,18 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
             document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
         });
 });
+function cambiarImagen(elemento) {
+    const imagenActiva = document.getElementById("imagenActiva");
+    imagenActiva.src = elemento.src;
+
+    document.querySelectorAll(".miniaturas img").forEach(img => {
+        img.classList.remove("activa");
+    });
+    elemento.classList.add("activa");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const primera = document.querySelector(".miniaturas img");
+        if (primera) primera.classList.add("activa");
+});
+

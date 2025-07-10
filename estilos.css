@@ -206,6 +206,7 @@ header img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     flex-basis: 100%;
+    flex-grow: 1;
 }
 .galeria-destacada h2 {
     font-size: 1.3em;
@@ -466,7 +467,59 @@ footer a:hover {
     justify-content: space-between;
     gap: 20px;
 }
+/* ============================
+    ALINEACIÓN DE ALTURA ENTRE COLUMNAS
+============================ */
+.banner-contenido {
+    align-items: stretch;
+}
 
+.info-institucional,
+.noticias-y-carrusel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* ============================
+    MODAL DE IMAGEN DESTACADA
+============================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+.pie-foto {
+    text-align: center;
+    color: #f0f0f0;
+    padding: 10px;
+    font-size: 1em;
+}
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f0f0f0;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cerrar:hover {
+    color: #ccc;
+}
 /* ============================
     RESPONSIVE EXTRA PARA MÓVILES
 ============================ */

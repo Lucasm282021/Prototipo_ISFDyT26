@@ -56,7 +56,7 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
         })
         .then(html => {
             const banner = document.querySelector('.banner');
-            banner.classList.remove('animado'); // Evita animación en contenido cargado
+            banner.classList.remove('animado');
             banner.innerHTML = html;
             banner.style.backgroundImage = "url('Img/baner_instituto.jpeg')";
             banner.style.backgroundSize = "cover";
@@ -69,22 +69,45 @@ document.getElementById('linkCarreras').addEventListener('click', function (e) {
             document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
         });
 });
+// Cambiar imagen principal y actualizar alt
 function cambiarImagen(elemento) {
     const imagenActiva = document.getElementById("imagenActiva");
-
-    // Aplica desvanecido
-    imagenActiva.style.opacity = 0;
-
-    // Espera a que se desvanezca antes de cambiar la imagen
-    setTimeout(() => {
-        imagenActiva.src = elemento.src;
-        imagenActiva.style.opacity = 1;
-    }, 200);
-
-    // Actualiza miniaturas activas
+    imagenActiva.src = elemento.src;
+    imagenActiva.alt = elemento.alt;
     document.querySelectorAll(".miniaturas img").forEach(img => {
         img.classList.remove("activa");
     });
     elemento.classList.add("activa");
+}
+// Al cargar el DOM
+document.addEventListener("DOMContentLoaded", () => {
+    const primera = document.querySelector(".miniaturas img");
+    if (primera) {
+        primera.classList.add("activa");
+        document.getElementById("imagenActiva").alt = primera.alt;
+    }
+    // Abrir modal al hacer clic en la imagen principal
+    const imagenActiva = document.getElementById("imagenActiva");
+    if (imagenActiva) {
+        imagenActiva.addEventListener("click", () => {
+            const modal = document.getElementById("modalImagen");
+            const imagenAmpliada = document.getElementById("imagenAmpliada");
+            const pieDeFoto = document.getElementById("pieDeFoto");
+            imagenAmpliada.src = imagenActiva.src;
+            pieDeFoto.textContent = imagenActiva.alt || "Imagen destacada";
+            modal.style.display = "block";
+        });
+    }
+    // Cerrar modal al presionar Esc o hacer clic fuera de la imagen
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") cerrarModal();
+    });
+    document.getElementById("modalImagen").addEventListener("click", (e) => {
+        if (e.target.id === "modalImagen") cerrarModal();
+    });
+});
+// Función para cerrar el modal
+function cerrarModal() {
+    document.getElementById("modalImagen").style.display = "none";
 }
 

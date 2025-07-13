@@ -13,24 +13,32 @@
         <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
         <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
     </header>
-
     <nav class="navbar-scroll">
-        <div class="nav-scroll-container">
-            <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
-            <ul class="nav-scroll" id="scrollMenu">
-                <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="#" id="linkCarreras">🎓 Carreras</a></li>
-                <li><a href="#">📚 Oferta Académica 2025</a></li>
-                <li><a href="#">📝 Inscripción 2025</a></li>
-                <li><a href="#">💻 Login</a></li>
-                <li><a href="#">🖼️ Galería de Imágenes</a></li>
-                <li><a href="#">📞 Contacto</a></li>
-                <li><a href="#">📋 Consejo Académico Institucional</a></li>
+        <div class="nav-inner">
+            <button class="hamburger-btn" id="menuToggle">☰</button>
+            <ul id="hamburgerMenu" class="hamburger-menu">
+                <li><a href="#"> Inicio</a></li>
+                <li><a href="#"> Carreras</a></li>
+                <li><a href="#"> Oferta Académica 2025</a></li>
+                <li><a href="#"> Inscripción</a></li>
+                <li><a href="#"> Contacto</a></li>
             </ul>
-            <button class="scroll-btn right" id="btnRight" aria-label="Desplazar a la derecha">▶</button>
+            <div class="nav-scroll-container">
+                <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
+                <ul class="nav-scroll" id="scrollMenu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" id="linkCarreras">Carreras</a></li>
+                    <li><a href="#">Oferta Académica 2025</a></li>
+                    <li><a href="#">Inscripción 2025</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Galería de Imágenes</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Consejo Académico Institucional</a></li>
+                </ul>
+                <button class="scroll-btn right" id="btnRight" aria-label="Desplazar a la derecha">▶</button>
+            </div>
         </div>
     </nav>
-
     <section class="banner" id="banner">
         <div class="banner-contenido">
             <div class="objetos-institucionales">

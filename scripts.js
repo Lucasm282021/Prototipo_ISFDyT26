@@ -105,4 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("hamburgerMenu").classList.toggle("show");
+});

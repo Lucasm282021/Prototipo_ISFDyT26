@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>ISFDyT N°26 - Página Principal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sitio oficial del Instituto Superior de Formación Docente y Técnica N° 26 de Dolores. Información académica, carreras, inscripción y más.">
+    <meta name="description" content="Sitio oficial del Instituto Superior de Formación Docente y Técnica N° 26 de Dolores. Información académica, carreras, inscripción y más." />
     <meta name="theme-color" content="#3e4a7b" />
     <link rel="stylesheet" href="estilos.css" />
 </head>
@@ -19,7 +19,7 @@
             <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
             <ul class="nav-scroll" id="scrollMenu">
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="#carreras" id="linkCarreras">🎓 Carreras</a></li>
+                <li><a href="#" id="linkCarreras">🎓 Carreras</a></li>
                 <li><a href="#">📚 Oferta Académica 2025</a></li>
                 <li><a href="#">📝 Inscripción 2025</a></li>
                 <li><a href="#">💻 Login</a></li>
@@ -33,44 +33,47 @@
 
     <section class="banner" id="banner">
         <div class="banner-contenido">
-            <div class="info-institucional">
-                <h2>ISFDyT Nº 26</h2>
-                <p><strong>Dirección:</strong> Marquez 51, Dolores, Provincia de Buenos Aires</p>
-                <p><strong>Teléfono:</strong> (02245) 44-3171</p>
-                <p><strong>Email:</strong> contacto@isfdyt26.edu.ar</p>
-                <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00</p>
-                <div class="como-llegar">
-                    <h4>📍 Cómo llegar</h4>
-                    <div class="mapa">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.8315956738097!2d-57.68115612443433!3d-36.316390449955165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95999ffe374fef0d%3A0x82de37b11ba79d2d!2sInstituto%20Superior%20De%20Formaci%C3%B3n%20Docente%20N%C2%BA26!5e0!3m2!1ses!2sar!4v1751832529468!5m2!1ses!2sar"
-                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+            <div class="objetos-institucionales">
+                <div class="info-institucional">
+                    <h2>ISFDyT Nº 26</h2>
+                    <p><strong>Dirección:</strong> Marquez 51, Dolores, Provincia de Buenos Aires</p>
+                    <p><strong>Teléfono:</strong> (02245) 44-3171</p>
+                    <p><strong>Email:</strong> contacto@isfdyt26.edu.ar</p>
+                    <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00</p>
+                    <div class="como-llegar">
+                        <h4>📍 Cómo llegar</h4>
+                        <div class="mapa">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.8315956738097!2d-57.68115612443433!3d-36.316390449955165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95999ffe374fef0d%3A0x82de37b11ba79d2d!2sInstituto%20Superior%20De%20Formaci%C3%B3n%20Docente%20N%C2%BA26!5e0!3m2!1ses!2sar!4v1751832529468!5m2!1ses!2sar"
+                                width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="noticias-y-carrusel">
                 <div class="noticias">
                     <h2>Últimas noticias</h2>
-                    <ul>
-                        <li><strong>Inscripciones abiertas</strong> para el ciclo lectivo 2025</li>
-                        <li><strong>Nuevo convenio</strong> con la Universidad Nacional de Mar del Plata</li>
-                        <li><strong>Jornada institucional</strong> sobre prácticas profesionalizantes</li>
-                    </ul>
+                <ul>
+                    <li><strong>Inscripciones 2025 abiertas:</strong> Ya podés preinscribirte online a las carreras disponibles para el próximo ciclo lectivo.</li>
+                    <li><strong>Nueva sala multimedia:</strong> Inauguramos un espacio equipado con tecnología audiovisual para clases interactivas.</li>
+                    <li><strong>Convenio con UTN:</strong> Firmamos un acuerdo para prácticas profesionalizantes en entornos tecnológicos.</li>
+                    <li><strong>Taller de inclusión digital:</strong> Estudiantes participaron en una jornada sobre accesibilidad en entornos virtuales.</li>
+                    <li><strong>Visita del Director General de Escuelas:</strong> Recorrió nuestras instalaciones y dialogó con el equipo docente.</li>
+                    <li><strong>Expo Carrera 2025:</strong> El instituto formó parte del evento educativo más importante de la región.</li>
+                </ul>
                 </div>
 
                 <div class="galeria-destacada">
                     <h2>Imágenes destacadas</h2>
                     <div class="slider-con-miniaturas">
                         <div class="imagen-principal">
-                            <img id="imagenActiva" src="Img/slide1.jpg" alt="Acto de colación 2023" style="cursor: pointer;" role="button">
+                            <img id="imagenActiva" src="Img/slide1.jpg" alt="Acto de colación 2023" tabindex="0" role="button" />
                         </div>
                         <div class="miniaturas">
-                            <img src="Img/slide1.jpg" alt="Acto de colación 2023" onclick="cambiarImagen(this)">
-                            <img src="Img/slide2.jpg" alt="Visita de autoridades educativas" onclick="cambiarImagen(this)">
-                            <img src="Img/slide3.jpg" alt="Estudiantes en jornada institucional" onclick="cambiarImagen(this)">
+                            <img src="Img/slide1.jpg" alt="Acto de colación 2023" class="miniatura" />
+                            <img src="Img/slide2.jpg" alt="Visita de autoridades educativas" class="miniatura" />
+                            <img src="Img/slide3.jpg" alt="Estudiantes en jornada institucional" class="miniatura" />
                         </div>
                     </div>
                 </div>
@@ -83,13 +86,6 @@
         <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
         <button onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
     </footer>
-
-    <!-- Modal para imagen ampliada -->
-    <div id="modalImagen" class="modal">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <img class="modal-contenido" id="imagenAmpliada">
-        <div id="pieDeFoto" class="pie-foto"></div>
-    </div>
 
     <script src="scripts.js"></script>
 </body>

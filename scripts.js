@@ -1,113 +1,108 @@
-// Scroll horizontal del menú
-const scrollMenu = document.getElementById('scrollMenu');
-const btnLeft = document.getElementById('btnLeft');
-const btnRight = document.getElementById('btnRight');
+// === 1. Scroll horizontal del menú ===
+const scrollMenu = document.getElementById("scrollMenu");
+const btnLeft = document.getElementById("btnLeft");
+const btnRight = document.getElementById("btnRight");
 
-function scrollLeft() {
-    scrollMenu.scrollBy({ left: -200, behavior: 'smooth' });
-}
+btnLeft.addEventListener("click", () => {
+  scrollMenu.scrollBy({ left: -200, behavior: "smooth" });
+});
+btnRight.addEventListener("click", () => {
+  scrollMenu.scrollBy({ left: 200, behavior: "smooth" });
+});
 
-function scrollRight() {
-    scrollMenu.scrollBy({ left: 200, behavior: 'smooth' });
-}
-
-btnLeft.addEventListener('click', scrollLeft);
-btnRight.addEventListener('click', scrollRight);
-
-// Ocultar botones si se llega al extremo
+// Sentinelas para mostrar/ocultar botones
 const observerOptions = { root: scrollMenu, threshold: 1.0 };
-const leftSentinel = document.createElement('li');
-leftSentinel.style.width = '1px';
+const leftSentinel = document.createElement("li");
+leftSentinel.style.width = "1px";
 scrollMenu.insertBefore(leftSentinel, scrollMenu.firstChild);
 
-const rightSentinel = document.createElement('li');
-rightSentinel.style.width = '1px';
+const rightSentinel = document.createElement("li");
+rightSentinel.style.width = "1px";
 scrollMenu.appendChild(rightSentinel);
 
-const leftObserver = new IntersectionObserver((entries) => {
-    btnLeft.classList.toggle('hidden', entries[0].isIntersecting);
-}, observerOptions);
+new IntersectionObserver((entries) => {
+  btnLeft.classList.toggle("hidden", entries[0].isIntersecting);
+}, observerOptions).observe(leftSentinel);
 
-const rightObserver = new IntersectionObserver((entries) => {
-    btnRight.classList.toggle('hidden', entries[0].isIntersecting);
-}, observerOptions);
+new IntersectionObserver((entries) => {
+  btnRight.classList.toggle("hidden", entries[0].isIntersecting);
+}, observerOptions).observe(rightSentinel);
 
-leftObserver.observe(leftSentinel);
-rightObserver.observe(rightSentinel);
-
-// Modo oscuro
+// === 2. Modo oscuro persistente ===
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode'));
+  document.body.classList.toggle("dark-mode");
+  const activo = document.body.classList.contains("dark-mode");
+  localStorage.setItem("modoOscuro", activo);
 }
 
-if (localStorage.getItem('modoOscuro') === 'true') {
-    document.body.classList.add('dark-mode');
+if (localStorage.getItem("modoOscuro") === "true") {
+  document.body.classList.add("dark-mode");
 }
 
-// Carga dinámica de carreras.html desde el botón del menú
-document.getElementById('linkCarreras').addEventListener('click', function (e) {
-    e.preventDefault();
+// === 3. Carga dinámica de secciones (usado en "Carreras") ===
+function cargarSeccion(url, contenedorSelector, callback) {
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error("No se pudo cargar el contenido");
+      return res.text();
+    })
+    .then((html) => {
+      const contenedor = document.querySelector(contenedorSelector);
+      if (!contenedor) return;
 
-    fetch('carreras.html')
-        .then(response => {
-            if (!response.ok) throw new Error('No se pudo cargar el contenido');
-            return response.text();
-        })
-        .then(html => {
-            const banner = document.querySelector('.banner');
-            banner.classList.remove('animado');
-            banner.innerHTML = html;
-            banner.style.backgroundImage = "url('Img/baner_instituto.jpeg')";
-            banner.style.backgroundSize = "cover";
-            banner.style.backgroundPosition = "center";
-            banner.style.backgroundRepeat = "no-repeat";
-            banner.style.color = "#1c244b";
-        })
-        .catch(error => {
-            console.error('Error al cargar carreras.html:', error);
-            document.querySelector('.banner').innerHTML = '<p>Error al cargar el contenido.</p>';
+      contenedor.innerHTML = html;
+
+      // Si es el banner, restaurar fondo
+      if (contenedor.classList.contains("banner")) {
+        Object.assign(contenedor.style, {
+          backgroundImage: "url('Img/baner_instituto.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          color: "#1c244b",
         });
-});
-// Cambiar imagen principal y actualizar alt
-function cambiarImagen(elemento) {
-    const imagenActiva = document.getElementById("imagenActiva");
-    imagenActiva.src = elemento.src;
-    imagenActiva.alt = elemento.alt;
-    document.querySelectorAll(".miniaturas img").forEach(img => {
-        img.classList.remove("activa");
+        contenedor.classList.remove("animado");
+      }
+
+      if (typeof callback === "function") callback();
+    })
+    .catch((err) => {
+      console.error(`Error al cargar ${url}:`, err);
+      const contenedor = document.querySelector(contenedorSelector);
+      if (contenedor) contenedor.innerHTML = "<p>Error al cargar el contenido.</p>";
     });
-    elemento.classList.add("activa");
 }
-// Al cargar el DOM
+
+// === 4. Inicialización de galería destacada ===
+function initGaleriaDestacada() {
+  const imagenActiva = document.getElementById("imagenActiva");
+  const miniaturas = document.querySelectorAll(".miniatura");
+
+  if (miniaturas.length > 0 && imagenActiva) {
+    miniaturas[0].classList.add("activa");
+    imagenActiva.alt = miniaturas[0].alt;
+  }
+
+  miniaturas.forEach((img) => {
+    img.addEventListener("click", () => {
+      imagenActiva.src = img.src;
+      imagenActiva.alt = img.alt;
+      miniaturas.forEach((i) => i.classList.remove("activa"));
+      img.classList.add("activa");
+    });
+  });
+}
+
+// === 5. Activación inicial del sitio ===
 document.addEventListener("DOMContentLoaded", () => {
-    const primera = document.querySelector(".miniaturas img");
-    if (primera) {
-        primera.classList.add("activa");
-        document.getElementById("imagenActiva").alt = primera.alt;
-    }
-    // Abrir modal al hacer clic en la imagen principal
-    const imagenActiva = document.getElementById("imagenActiva");
-    if (imagenActiva) {
-        imagenActiva.addEventListener("click", () => {
-            const modal = document.getElementById("modalImagen");
-            const imagenAmpliada = document.getElementById("imagenAmpliada");
-            const pieDeFoto = document.getElementById("pieDeFoto");
-            imagenAmpliada.src = imagenActiva.src;
-            pieDeFoto.textContent = imagenActiva.alt || "Imagen destacada";
-            modal.style.display = "block";
-        });
-    }
-    // Cerrar modal al presionar Esc o hacer clic fuera de la imagen
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") cerrarModal();
+  initGaleriaDestacada();
+
+  const btnCarreras = document.getElementById("linkCarreras");
+  if (btnCarreras) {
+    btnCarreras.addEventListener("click", (e) => {
+      e.preventDefault();
+      cargarSeccion("carreras.html", ".banner", initGaleriaDestacada);
     });
-    document.getElementById("modalImagen").addEventListener("click", (e) => {
-        if (e.target.id === "modalImagen") cerrarModal();
-    });
+  }
 });
-// Función para cerrar el modal
-function cerrarModal() {
-    document.getElementById("modalImagen").style.display = "none";
-}
 

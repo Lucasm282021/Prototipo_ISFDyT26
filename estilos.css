@@ -1,571 +1,387 @@
-/* ============================
-    ESTILOS GENERALES
-============================ */
+/* === 1. ESTILOS GENERALES === */
+* {
+  box-sizing: border-box;
+}
 body {
-    margin: 0;
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    background-color: #fdf6e3;
-    color: #1c244b;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #fdf6e3;
+  color: #1c244b;
 }
 
-/* ============================
-    ENCABEZADO
-============================ */
+/* === 2. ENCABEZADO === */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #3e4a7b;
-    color: white;
-    padding: 10px;
-    flex-wrap: wrap;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e4a7b;
+  color: white;
+  padding: 10px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 header img {
-    height: 120px;
-    margin-right: 20px;
+  height: 120px;
+  margin-right: 20px;
 }
-/* ============================
-    BARRA DE NAVEGACIÓN
-============================ */
+
+/* === 3. BARRA DE NAVEGACIÓN === */
 .navbar-scroll {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dcdcdc;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .nav-scroll-container {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 10px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px;
+  position: relative;
 }
 .scroll-btn {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: #3e4a7b;
-    cursor: pointer;
-    padding: 0 10px;
-    transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #3e4a7b;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: color 0.3s ease;
 }
 .scroll-btn:hover {
-    color: #1c244b;
+  color: #1c244b;
 }
 .scroll-btn.hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 .nav-scroll {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    list-style: none;
-    margin: 0;
-    padding: 0 10px;
-    scrollbar-width: none;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  scrollbar-width: none;
 }
 .nav-scroll::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .nav-scroll li {
-    flex: 0 0 auto;
-    margin: 0 6px;
+  flex: 0 0 auto;
+  margin: 0 6px;
 }
 .nav-scroll a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 14px;
-    font-size: 0.9em;
-    font-weight: 500;
-    color: #3e4a7b;
-    background-color: #e9ecf5;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #3e4a7b;
+  background-color: #e9ecf5;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 80px;
 }
 .nav-scroll a span {
-    margin-top: 4px;
-    font-size: 0.8em;
+  margin-top: 4px;
+  font-size: 0.8em;
 }
 .nav-scroll a:hover {
-    background-color: #3e4a7b;
-    color: white;
+  background-color: #3e4a7b;
+  color: white;
 }
-/* ============================
-    BANNER PRINCIPAL
-============================ */
+/* === 4. BANNER PRINCIPAL === */
 .banner {
-    background-image: url('Img/baner_instituto.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    min-height: 100vh;
-    box-sizing: border-box;
+  background-image: url('Img/baner_instituto.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  min-height: 100vh;
 }
 .banner::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.05);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 0;
 }
 .banner-contenido {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: stretch;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
 }
-.info-institucional {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 12px;
-    color: #1c244b;
-    max-width: 500px;
-    flex: 1 1 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    text-align: left;
-}
-.info-institucional h2 {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #3e4a7b;
-    margin-bottom: 14px;
-}
-.info-institucional p {
-    margin-bottom: 12px;
-}
-.info-institucional strong {
-    font-weight: 600;
-    color: #2c355c;
-}
-/* ============================
-    NOTICIAS
-============================ */
-.noticias {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 12px;
-    color: #1c244b;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    text-align: left;
-    min-height: 150px;
-    height: auto;
-}
-.noticias h2 {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #3e4a7b;
-    margin-bottom: 14px;
-}
-.noticias ul {
-    padding-left: 20px;
-    margin: 0;
-}
-.noticias ul li {
-    margin-bottom: 10px;
-    font-size: 0.95em;
-    line-height: 1.6;
-}
-.noticias ul li strong {
-    font-weight: 600;
-    color: #2c355c;
+.objetos-institucionales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ============================
-    GALERÍA DESTACADA
-============================ */
+/* === 5. BLOQUES INSTITUCIONALES UNIFICADOS CORREGIDOS === */
+.info-institucional,
+.noticias,
 .galeria-destacada {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 12px;
-    color: #1c244b;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    flex-basis: 100%;
-    flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 20px 24px;
+  border-radius: 12px;
+  color: #1c244b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1 1 340px;
+  max-width: 380px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start;
 }
+
+/* Alineación específica del título de noticias */
+.noticias h2 {
+  text-align: left;
+}
+
+/* Ajustes en la lista */
+.noticias ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+/* === 6. TÍTULOS UNIFICADOS === */
+.info-institucional h2,
+.noticias h2,
 .galeria-destacada h2 {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #3e4a7b;
-    margin-bottom: 14px;
-    text-align: center;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #3e4a7b;
+  margin-bottom: 14px;
 }
-.galeria-banner {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
+
+/* === 7. TEXTOS Y LISTAS GENERALES === */
+.info-institucional p,
+.noticias ul,
+.noticias ul li,
+.galeria-destacada p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 0.95em;
 }
-.galeria-banner img {
-    width: 100%;
-    height: auto;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-/* ============================
-    SLIDER CON MINIATURAS
-============================ */
+
+/* === 8. MINIATURAS DE GALERÍA === */
 .slider-con-miniaturas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 .imagen-principal {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .imagen-principal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
 }
-
 .miniaturas {
-    display: flex;
-    gap: 5px;   
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .miniaturas img {
-    width: 60px;
-    height: 45px;
-    opacity: 0.7;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    border-radius: 4px;
+  width: 60px;
+  height: 45px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  margin-top: 6px;
 }
 .miniaturas img:hover,
 .miniaturas img.activa {
-    opacity: 1;
-    transform: scale(1.05);
-    border: 2px solid #3e4a7b;
+  opacity: 1;
+  transform: scale(1.05);
+  border: 2px solid #3e4a7b;
 }
-/* ============================
-    CÓMO LLEGAR
-============================ */
+
+/* === 9. SECCIÓN CÓMO LLEGAR === */
 .como-llegar {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 .como-llegar h4 {
-    margin-bottom: 10px;
-    color: #3e4a7b;
-    font-size: 1em;
+  margin-bottom: 10px;
+  color: #3e4a7b;
+  font-size: 1em;
 }
 .mapa {
-    margin-top: 10px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 16 / 9;
-    max-height: 360px;
-    position: relative;
-    z-index: 2;
-}
-.mapa iframe {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-height: 360px;
+  position: relative;
 }
 
-/* ============================
-    BOTÓN DEL BANNER
-============================ */
+.mapa iframe {
+  width: 100%;
+  height: 250px;        /* 👈 altura fija para mantener controlada la dimensión */
+  border: 0;
+  display: block;
+  pointer-events: auto; /* 👈 asegura que el iframe reciba eventos de mouse */
+}
+/* === 10. BOTÓN DEL BANNER === */
 .btn-banner {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #3e4a7b;
-    color: white;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 1;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #3e4a7b;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 .btn-banner:hover {
-    background-color: #2c355c;
+  background-color: #2c355c;
 }
-/* ============================
-    ANIMACIONES DEL BANNER
-============================ */
+
+/* === 11. ANIMACIONES === */
 .banner.animado h2,
 .banner.animado p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-/* ============================
-    SECCIÓN DE CARRERAS
-============================ */
-.carreras-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    padding: 30px;
-    background-color: rgba(245, 247, 250, 0.85);
-    border-radius: 12px;
-    margin-top: 30px;
-    color: #1c244b;
-    overflow: visible;
-    perspective: 1000px;
-}
-.carrera-card {
-    background-color: #ffffff;
-    border: 1px solid #dcdfe6;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    will-change: transform;
-}
-.carrera-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-    z-index: 1;
-}
-.carrera-card h3 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #2c355c;
-    border-bottom: 1px solid #e0e3eb;
-    padding-bottom: 10px;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-.carrera-card p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    color: #444;
-}
-.carrera-card ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style-type: disc;
-}
-.carrera-card ul li {
-    margin-bottom: 6px;
-    font-size: 0.9em;
-    color: #333;
-}
-/* ============================
-    SECCIÓN DE CONTACTO
-============================ */
-.contacto {
-    background-color: #3e4a7b;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.contacto a {
-    color: white;
-    text-decoration: underline;
-}
-
-/* ============================
-    PIE DE PÁGINA
-============================ */
+/* === 12. PIE DE PÁGINA === */
 footer {
-    background-color: #2c355c;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
+  background-color: #2c355c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+footer p {
+  margin: 0;
 }
 footer a {
-    color: #e4e7fb;
-    text-decoration: none;
+  color: #e4e7fb;
+  text-decoration: none;
+  margin: 0 8px;
 }
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+footer button {
+  background: none;
+  border: 2px solid #e4e7fb;
+  color: #e4e7fb;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+footer button:hover {
+  background-color: #e4e7fb;
+  color: #2c355c;
 }
 
-/* ============================
-    MODO OSCURO
-============================ */
-.dark-mode {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
+/* === 13. MODO OSCURO CORREGIDO === */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
 }
-.dark-mode header,
-.dark-mode .navbar-scroll,
-.dark-mode .contacto,
-.dark-mode footer {
-    background-color: #2c2c2c;
-    color: #f0f0f0;
+body.dark-mode header,
+body.dark-mode .navbar-scroll,
+body.dark-mode .contacto,
+body.dark-mode footer {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
 }
-.dark-mode .nav-scroll a {
-    background-color: #444;
-    color: #f0f0f0;
+body.dark-mode .nav-scroll a {
+  background-color: #444;
+  color: #f0f0f0;
 }
-.dark-mode .nav-scroll a:hover {
-    background-color: #666;
-    color: white;
+body.dark-mode .nav-scroll a:hover {
+  background-color: #666;
+  color: white;
 }
-.dark-mode .scroll {
-    color: #f0f0f0;
-}
-/* ============================
-    UNIFICACIÓN DE ANCHO ENTRE COLUMNAS
-============================ */
-.noticias,
-.galeria-destacada {
-    max-width: 500px;
-    flex: 1 1 50%;
+body.dark-mode .scroll {
+  color: #f0f0f0;
 }
 
-.noticias-y-carrusel {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-}
-/* ============================
-    ALINEACIÓN DE ALTURA ENTRE COLUMNAS
-============================ */
-.banner-contenido {
-    align-items: stretch;
-}
-
-.info-institucional,
-.noticias-y-carrusel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-/* ============================
-    MODAL DE IMAGEN DESTACADA
-============================ */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-}
-.modal-contenido {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 8px;
-}
-.pie-foto {
-    text-align: center;
-    color: #f0f0f0;
-    padding: 10px;
-    font-size: 1em;
-}
-.cerrar {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f0f0f0;
-    font-size: 2em;
-    font-weight: bold;
-    cursor: pointer;
-}
-.cerrar:hover {
-    color: #ccc;
-}
-/* ============================
-    RESPONSIVE EXTRA PARA MÓVILES
-============================ */
+/* === 14. RESPONSIVE MÓVILES === */
 @media (max-width: 480px) {
-    body {
-        font-size: 0.95em;
-    }
-
-    .banner-contenido {
-        padding: 10px;
-        gap: 20px;
-    }
-
-    .info-institucional,
-    .noticias,
-    .galeria-destacada {
-        padding: 16px;
-        max-width: 100%;
-    }
-
-    .btn-banner {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .miniaturas img {
-        width: 45px;
-        height: 34px;
-    }
-
-    .scroll-btn {
-        font-size: 1.2em;
-        padding: 0 6px;
-    }
-
-    .carreras-grid {
-        padding: 20px 10px;
-        gap: 16px;
-    }
-
-    .carrera-card {
-        padding: 16px;
-    }
-
-    footer {
-        padding: 10px;
-        font-size: 0.85em;
-    }
+  body {
+    font-size: 0.95em;
+  }
+  .banner-contenido {
+    padding: 10px;
+  }
+  .objetos-institucionales {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .info-institucional,
+  .noticias,
+  .galeria-destacada {
+    max-width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+  .btn-banner {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+  .miniaturas img {
+    width: 45px;
+    height: 34px;
+  }
+  .scroll-btn {
+    font-size: 1.2em;
+    padding: 0 6px;
+  }
+  .carreras-grid {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+  .carrera-card {
+    padding: 16px;
+  }
+  footer {
+    padding: 10px;
+    font-size: 0.85em;
+  }
 }

@@ -1,459 +1,457 @@
 /* === 1. ESTILOS GENERALES === */
-* {
-  box-sizing: border-box;
+{
+    box-sizing: border-box;
 }
 body {
-  margin: 0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background-color: #fdf6e3;
-  color: #1c244b;
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #fdf6e3;
+    color: #1c244b;
 }
-
 /* === 2. ENCABEZADO === */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #3e4a7b;
-  color: white;
-  padding: 10px;
-  flex-wrap: wrap;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3e4a7b;
+    color: white;
+    padding: 10px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 header img {
-  height: 120px;
-  margin-right: 20px;
+    height: 120px;
+    margin-right: 20px;
 }
-
 /* === 3. BARRA DE NAVEGACIÓN === */
 .navbar-scroll {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dcdcdc;
-  padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 .nav-scroll-container {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 10px;
-  position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
+    position: relative;
 }
 .scroll-btn {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  color: #3e4a7b;
-  cursor: pointer;
-  padding: 0 10px;
-  transition: color 0.3s ease;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #3e4a7b;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: color 0.3s ease;
 }
 .scroll-btn:hover {
-  color: #1c244b;
+    color: #1c244b;
 }
 .scroll-btn.hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 .nav-scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  list-style: none;
-  margin: 0;
-  padding: 0 10px;
-  scrollbar-width: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    scrollbar-width: none;
 }
 .nav-scroll::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 .nav-scroll li {
-  flex: 0 0 auto;
-  margin: 0 6px;
+    flex: 0 0 auto;
+    margin: 0 6px;
 }
 .nav-scroll a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  font-size: 0.95em;
-  font-weight: 500;
-  color: #ffffff;
-  background-color: #3e4a7b;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #3e4a7b;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 .nav-scroll a span {
-  margin-top: 4px;
-  font-size: 0.8em;
+    margin-top: 4px;
+    font-size: 0.8em;
 }
 .nav-scroll a:hover {
-  background-color: #ffffff;
-  color: #3e4a7b;
-  border-color: #3e4a7b;
+    background-color: #ffffff;
+    color: #3e4a7b;
+    border-color: #3e4a7b;
 }
 .nav-inner {
-  position: relative;
+    position: relative;
 }
 /* === 4. BANNER PRINCIPAL === */
 .banner {
-  background-image: url('Img/baner_instituto.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-  min-height: 100vh;
+    background-image: url('Img/baner_instituto.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    min-height: 100vh;
 }
 .banner::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.05);
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 0;
 }
 .banner-contenido {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
 }
 .objetos-institucionales {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 /* === 5. BLOQUES INSTITUCIONALES UNIFICADOS CORREGIDOS === */
 .info-institucional,
 .noticias,
 .galeria-destacada {
-  background-color: rgba(255, 255, 255, 0.92);
-  padding: 20px 24px;
-  border-radius: 12px;
-  color: #1c244b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  flex: 1 1 340px;
-  max-width: 380px;
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 20px 24px;
+    border-radius: 12px;
+    color: #1c244b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1 1 340px;
+    max-width: 380px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
 }
-
 /* Alineación específica del título de noticias */
 .noticias h2 {
-  text-align: left;
+    text-align: left;
 }
-
 /* Ajustes en la lista */
 .noticias ul {
-  padding-left: 20px;
-  margin-top: 0;
+    padding-left: 20px;
+    margin-top: 0;
 }
 /* === 6. TÍTULOS UNIFICADOS === */
 .info-institucional h2,
 .noticias h2,
 .galeria-destacada h2 {
-  font-size: 1.3em;
-  font-weight: 700;
-  color: #3e4a7b;
-  margin-bottom: 14px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #3e4a7b;
+    margin-bottom: 14px;
 }
-
 /* === 7. TEXTOS Y LISTAS GENERALES === */
 .info-institucional p,
 .noticias ul,
 .noticias ul li,
 .galeria-destacada p {
-  margin-bottom: 12px;
-  line-height: 1.6;
-  font-size: 0.95em;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 0.95em;
 }
-
 /* === 8. MINIATURAS DE GALERÍA === */
 .slider-con-miniaturas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 .imagen-principal {
-  width: 100%;
-  height: 320px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .imagen-principal img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity 0.4s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
 }
 .miniaturas {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .miniaturas img {
-  width: 60px;
-  height: 45px;
-  opacity: 0.7;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  margin-top: 6px;
+    width: 60px;
+    height: 45px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    margin-top: 6px;
 }
 .miniaturas img:hover,
 .miniaturas img.activa {
-  opacity: 1;
-  transform: scale(1.05);
-  border: 2px solid #3e4a7b;
+    opacity: 1;
+    transform: scale(1.05);
+    border: 2px solid #3e4a7b;
 }
-
 /* === 9. SECCIÓN CÓMO LLEGAR === */
 .como-llegar {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 .como-llegar h4 {
-  margin-bottom: 10px;
-  color: #3e4a7b;
-  font-size: 1em;
+    margin-bottom: 10px;
+    color: #3e4a7b;
+    font-size: 1em;
 }
 .mapa {
-  margin-top: 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-height: 360px;
-  position: relative;
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 360px;
+    position: relative;
 }
 
 .mapa iframe {
-  width: 100%;
-  height: 250px;        /* 👈 altura fija para mantener controlada la dimensión */
-  border: 0;
-  display: block;
-  pointer-events: auto; /* 👈 asegura que el iframe reciba eventos de mouse */
+    width: 100%;
+    height: 250px;        /* 👈 altura fija para mantener controlada la dimensión */
+    border: 0;
+    display: block;
+    pointer-events: auto; /* 👈 asegura que el iframe reciba eventos de mouse */
 }
 /* === 10. BOTÓN DEL BANNER === */
 .btn-banner {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #3e4a7b;
-  color: white;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #3e4a7b;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 .btn-banner:hover {
-  background-color: #2c355c;
+    background-color: #2c355c;
 }
 
 /* === 11. ANIMACIONES === */
 .banner.animado h2,
 .banner.animado p {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
 }
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 /* === 12. PIE DE PÁGINA === */
 footer {
-  background-color: #2c355c;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+    background-color: #2c355c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 footer p {
-  margin: 0;
+    margin: 0;
 }
 footer a {
-  color: #e4e7fb;
-  text-decoration: none;
-  margin: 0 8px;
+    color: #e4e7fb;
+    text-decoration: none;
+    margin: 0 8px;
 }
 footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 footer button {
-  background: none;
-  border: 2px solid #e4e7fb;
-  color: #e4e7fb;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    background: none;
+    border: 2px solid #e4e7fb;
+    color: #e4e7fb;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 footer button:hover {
-  background-color: #e4e7fb;
-  color: #2c355c;
+    background-color: #e4e7fb;
+    color: #2c355c;
 }
-
 /* === 13. MODO OSCURO CORREGIDO === */
 body.dark-mode {
-  background-color: #1e1e1e;
-  color: #f0f0f0;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
 }
 body.dark-mode header,
 body.dark-mode .navbar-scroll,
 body.dark-mode .contacto,
 body.dark-mode footer {
-  background-color: #2c2c2c;
-  color: #f0f0f0;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
 }
 body.dark-mode .nav-scroll a {
-  background-color: #444;
-  color: #f0f0f0;
+    background-color: #444;
+    color: #f0f0f0;
 }
 body.dark-mode .nav-scroll a:hover {
-  background-color: #666;
-  color: white;
+    background-color: #666;
+    color: white;
 }
 body.dark-mode .scroll {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 /* MENU HAMBURGESA */
 .hamburger-btn {
-  display: none;
-  background-color: #3e4a7b;
-  color: white;
-  font-size: 1.6em;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-left: 10px;
-  z-index: 1001;
+    display: none;
+    background-color: #3e4a7b;
+    color: white;
+    font-size: 1.6em;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 10px;
+    z-index: 1001;
 }
-
 /* Contenedor del menú hamburguesa */
 .hamburger-menu {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #e9ecf5;
-  padding: 12px 16px;
-  border-radius: 12px;
-  position: absolute;
-  top: 100%;         /* Ubicado debajo del botón */
-  left: 10px;        /* Alineado con el botón */
-  margin-top: 6px;
-  z-index: 1001;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  list-style: none;      /* 🔥 Quita los puntos de la lista */
-  padding-left: 0;       /* 🧼 Evita sangría automática */
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e9ecf5;
+    padding: 12px 16px;
+    border-radius: 12px;
+    position: absolute;
+    top: 100%;         /* Ubicado debajo del botón */
+    left: 10px;        /* Alineado con el botón */
+    margin-top: 6px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;      /* 🔥 Quita los puntos de la lista */
+    padding-left: 0;       /* 🧼 Evita sangría automática */
 }
-
 /* Mostrar cuando se activa */
 .hamburger-menu.show {
-  display: flex;
+    display: flex;
 }
-
 /* Estilo general de enlaces */
 .hamburger-menu a {
-  display: block;
-  padding: 8px 12px;
-  color: #3e4a7b;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    padding: 8px 12px;
+    color: #3e4a7b;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 /* Hover mejorado */
 .hamburger-menu a:hover {
-  background-color: #3e4a7b;  /* Fondo azul al pasar */
-  color: #ffffff;             /* Texto blanco en hover */
+    background-color: #3e4a7b;  /* Fondo azul al pasar */
+    color: #ffffff;             /* Texto blanco en hover */
 }
-
-
-/* Mostrar hamburguesa solo en móviles */
-@media (max-width: 768px) {
-  .hamburger-btn {
-    display: block;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
-  .nav-scroll-container {
-    display: none;
-  }
-}
-
-
 /* === 14. RESPONSIVE MÓVILES === */
 @media (max-width: 480px) {
-  body {
-    font-size: 0.95em;
-  }
-  .banner-contenido {
-    padding: 10px;
-  }
-  .objetos-institucionales {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .info-institucional,
-  .noticias,
-  .galeria-destacada {
-    max-width: 100%;
-    min-height: auto;
-    padding: 16px;
-  }
-  .btn-banner {
-    padding: 10px 20px;
-    font-size: 0.9em;
-  }
-  .miniaturas img {
-    width: 45px;
-    height: 34px;
-  }
-  .scroll-btn {
-    font-size: 1.2em;
-    padding: 0 6px;
-  }
-  .carreras-grid {
-    padding: 20px 10px;
-    gap: 16px;
-  }
-  .carrera-card {
-    padding: 16px;
-  }
-  footer {
-    padding: 10px;
-    font-size: 0.85em;
-  }
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    header img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 1.1em;
+        line-height: 1.3;
+        max-width: 90%;
+    }
+    body {
+        font-size: 0.95em;
+    }
+    .banner-contenido {
+        padding: 10px;
+    }
+    .objetos-institucionales {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info-institucional,
+    .noticias,
+    .galeria-destacada {
+        max-width: 100%;
+        min-height: auto;
+        padding: 16px;
+    }
+    .btn-banner {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .miniaturas img {
+        width: 45px;
+        height: 34px;
+    }
+    .scroll-btn {
+        font-size: 1.2em;
+        padding: 0 6px;
+    }
+    .carreras-grid {
+        padding: 20px 10px;
+        gap: 16px;
+    }
+    .carrera-card {
+        padding: 16px;
+    }
+    footer {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+    .hamburger-btn {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .nav-scroll-container {
+        display: none;
+    }
 }
+
+

@@ -15,7 +15,7 @@ if (linkCarreras) {
     linkCarreras.addEventListener('click', function (e) {
         e.preventDefault();
 
-        fetch('carreras.html')
+        fetch('secciones/carreras/carreras.html')
             .then(response => {
                 if (!response.ok) throw new Error('No se pudo cargar el contenido');
                 return response.text();
@@ -27,8 +27,13 @@ if (linkCarreras) {
                 banner.classList.remove('animado');
                 banner.innerHTML = html;
 
+                const linkEstilosCarreras = document.createElement('link');
+                linkEstilosCarreras.rel = 'stylesheet';
+                linkEstilosCarreras.href = 'secciones/carreras/estilos-carreras.css';
+                document.head.appendChild(linkEstilosCarreras);
+
                 // Estilo del nuevo contenido del banner
-                banner.style.backgroundImage = "url('Img/baner_instituto.jpeg')";
+                banner.style.backgroundImage = "url('Img/baner_instituto_1.jpeg')";
                 banner.style.backgroundSize = "cover";
                 banner.style.backgroundPosition = "center";
                 banner.style.backgroundRepeat = "no-repeat";
@@ -82,3 +87,23 @@ if (botonMenu) {
         });
     });
 }
+
+// ⬆️ BOTÓN PARA IR ARRIBA
+// Mostrar botón solo cuando se baja
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('btn-ir-arriba');
+  if (window.scrollY > 400) {
+    btn.style.display = 'block';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+
+// Al hacer clic, volver arriba suavemente
+document.getElementById('btn-ir-arriba').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+

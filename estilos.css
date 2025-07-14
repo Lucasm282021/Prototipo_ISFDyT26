@@ -434,97 +434,119 @@ footer a:hover {
 }
 /*  RESPONSIVE EXTRA PARA MÓVILES */
 @media (max-width: 480px) {
-    html, body {
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
+  /* Evita scroll lateral en móviles */
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 
-    header {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    header img {
-        margin: 0 0 10px 0;
-    }
+  /* Encabezado */
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .contenedor-header {
-        display: flex;
-        flex-direction: column;
-    }
+  header img {
+    margin: 0 0 10px 0;
+  }
 
-    .logo img {
-        height: 70px;
-        margin-bottom: 10px;
-    }
+  .contenedor-header {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .titulo h1 {
-        font-size: 1.1em;
-        padding: 0 10px;
-    }
+  .logo img {
+    height: 70px;
+    margin-bottom: 10px;
+  }
 
-    .banner-contenido {
-        display: grid;
-        grid-template-columns: 1fr; /* apila en lugar de columnas */
-        gap: 20px;
-        padding: 10px;
-    }
+  .titulo h1 {
+    font-size: 1.1em;
+    padding: 0 10px;
+  }
 
-    .menu-toggle {
-        display: block;
-        align-self: flex-start;
-    }
+  /* Banner en una sola columna */
+  .banner-contenido {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
 
-    .nav-container {
-        padding: 0 10px;
-    }
+  .columna {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
-    .nav-scroll {
-        flex-direction: column;
-        background-color: #f8f9fa;
-        width: 100%;
-        display: none;
-        padding: 10px;
-        box-sizing: border-box; /* evita overflow por padding */
-    }
+  /* Menú */
+  .menu-toggle {
+    display: block;
+    align-self: flex-start;
+  }
 
-    .nav-scroll.show {
-        display: flex;
-    }
+  .nav-container {
+    padding: 0 10px;
+  }
 
-    .nav-scroll li {
-        margin: 10px 0;
-    }
+  .nav-scroll {
+    flex-direction: column;
+    background-color: #f8f9fa;
+    width: 100%;
+    display: none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-    .info-institucional,
-    .noticias,
-    .galeria-destacada {
-        padding: 16px;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
+  .nav-scroll.show {
+    display: flex;
+  }
 
-    .btn-banner {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
+  .nav-scroll li {
+    margin: 10px 0;
+  }
 
-    .miniaturas img {
-        width: 45px;
-        height: 34px;
-    }
+  /* Contenido institucional */
+  .info-institucional,
+  .noticias,
+  .galeria-destacada {
+    padding: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
-    iframe,
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+  .btn-banner {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
 
-    footer {
-        padding: 10px;
-        font-size: 0.85em;
-    }
+  .miniaturas img {
+    width: 45px;
+    height: 34px;
+  }
+
+  /* Ajuste de elementos visuales */
+  iframe,
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figure,
+  .slider-con-miniaturas {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 0.85em;
+  }
 }

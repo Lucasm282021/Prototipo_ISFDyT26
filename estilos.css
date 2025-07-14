@@ -434,74 +434,95 @@ footer a:hover {
 }
 /*  RESPONSIVE EXTRA PARA MÓVILES */
 @media (max-width: 480px) {
-body {
-    max-width: 100vw;
-    overflow-x: hidden;
+    html, body {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
+
     header {
+        display: flex;
         flex-direction: column;
         text-align: center;
     }
+
     header img {
         margin: 0 0 10px 0;
     }
-    /* Versión responsive del encabezado */
+
     .contenedor-header {
+        display: flex;
         flex-direction: column;
     }
+
     .logo img {
         height: 70px;
         margin-bottom: 10px;
     }
+
     .titulo h1 {
         font-size: 1.1em;
         padding: 0 10px;
     }
+
     .banner-contenido {
-        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr; /* apila en lugar de columnas */
         gap: 20px;
-        flex-direction: column;
+        padding: 10px;
     }
+
     .menu-toggle {
-        align-self: flex-start;
         display: block;
+        align-self: flex-start;
     }
+
     .nav-container {
-    padding: 0 10px;
+        padding: 0 10px;
     }
+
     .nav-scroll {
         flex-direction: column;
         background-color: #f8f9fa;
         width: 100%;
         display: none;
         padding: 10px;
+        box-sizing: border-box; /* evita overflow por padding */
     }
+
     .nav-scroll.show {
         display: flex;
     }
+
     .nav-scroll li {
         margin: 10px 0;
     }
+
     .info-institucional,
     .noticias,
     .galeria-destacada {
         padding: 16px;
         max-width: 100%;
+        box-sizing: border-box;
     }
+
     .btn-banner {
         padding: 10px 20px;
         font-size: 0.9em;
     }
+
     .miniaturas img {
         width: 45px;
         height: 34px;
     }
+
     iframe,
     img {
         max-width: 100%;
         height: auto;
         display: block;
     }
+
     footer {
         padding: 10px;
         font-size: 0.85em;

@@ -9,35 +9,37 @@
     <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-    <header>
-        <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
-        <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
+    <header class="encabezado">
+        <div class="contenedor-header">
+            <div class="logo">
+                <img src="Img/logo26.png" alt="Logo ISFDyT N°26" />
+            </div>
+            <div class="titulo">
+                <h1>INSTITUTO SUPERIOR DE FORMACIÓN DOCENTE Y TÉCNICA N° 26</h1>
+            </div>
+        </div>
     </header>
     <nav class="navbar-scroll">
-        <div class="nav-scroll-container">
-            <button class="scroll-btn left" id="btnLeft" aria-label="Desplazar a la izquierda">◀</button>
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
             <ul class="nav-scroll" id="scrollMenu">
-                <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="#carreras" id="linkCarreras">🎓 Carreras</a></li>
-                <li><a href="#">📚 Oferta Académica 2025</a></li>
-                <li><a href="#">📝 Inscripción 2025</a></li>
-                <li><a href="#">💻 Login</a></li>
-                <li><a href="#">🖼️ Galería de Imágenes</a></li>
-                <li><a href="#">📞 Contacto</a></li>
-                <li><a href="#">📋 Consejo Académico Institucional</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carreras" id="linkCarreras">Carreras</a></li>
+                <li><a href="#">Galería de Imágenes</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Consejo Académico Institucional</a></li>
             </ul>
-            <button class="scroll-btn right" id="btnRight" aria-label="Desplazar a la derecha">▶</button>
         </div>
     </nav>
     <section class="banner" id="banner">
-        <div class="banner-contenido">
-            <div class="info-institucional">
-                <h2>ISFDyT Nº 26</h2>
-                <p><strong>Direccion:</strong> Marquez 51, Dolores, Provincia de Buenos Aires</p>
-                <p><strong>Teléfono:</strong> (02245) 44-3171</p>
-                <p><strong>Email:</strong> contacto@isfdyt26.edu.ar</p>
-                <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00</p>
-            <div class="como-llegar">
+    <div class="banner-contenido">
+        <article class="info-institucional">
+            <h2>ISFDyT Nº 26</h2>
+            <p><strong>Dirección:</strong> Marquez 51, Dolores, Provincia de Buenos Aires</p>
+            <p><strong>Teléfono:</strong> (02245) 44-3171</p>
+            <p><strong>Email:</strong> contacto@isfdyt26.edu.ar</p>
+            <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00</p>
+            <aside class="como-llegar">
                 <h4>📍 Cómo llegar</h4>
                 <div class="mapa">
                     <iframe
@@ -46,53 +48,45 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
-        </div>
-        <div class="noticias-y-carrusel">
-            <div class="noticias">
+            </aside>
+        </article>
+        <aside class="noticias-y-carrusel">
+            <section class="noticias">
                 <h2>Últimas noticias</h2>
-                <ul>
-                    <li><strong>Inscripciones abiertas</strong> para el ciclo lectivo 2025</li>
-                    <li><strong>Nuevo convenio</strong> con la Universidad Nacional de Mar del Plata</li>
-                    <li><strong>Jornada institucional</strong> sobre prácticas profesionalizantes</li>
-                </ul>
-            </div>
-            <div class="galeria-destacada">
+                <article>
+                    <h3>Inscripciones abiertas</h3>
+                    <p>Para el ciclo lectivo 2025.</p>
+                </article>
+                <article>
+                    <h3>Nuevo convenio</h3>
+                    <p>Con la Universidad Nacional de Mar del Plata.</p>
+                </article>
+                <article>
+                    <h3>Jornada institucional</h3>
+                    <p>Sobre prácticas profesionalizantes.</p>
+                </article>
+            </section>
+            <aside class="galeria-destacada">
                 <h2>Imágenes destacadas</h2>
                 <div class="slider-con-miniaturas">
                     <div class="imagen-principal">
                         <img id="imagenActiva" src="Img/slide1.jpg" alt="Imagen destacada">
                     </div>
-                        <div class="miniaturas">
-                            <img src="Img/slide1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)">
-                            <img src="Img/slide2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
-                            <img src="Img/slide3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
-                        </div>
+                    <div class="miniaturas">
+                        <img src="Img/slide1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)">
+                        <img src="Img/slide2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
+                        <img src="Img/slide3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
                     </div>
                 </div>
-            </div>
-        </div>
+            </aside>
+        </aside>
+    </div>
     </section>
     <footer>
         <p>&copy; 2025 ISFDyT N°26 - Todos los derechos reservados</p>
         <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
         <button onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
     </footer>
-    <script>
-        function cambiarImagen(elemento) {
-        const imagenActiva = document.getElementById("imagenActiva");
-        imagenActiva.src = elemento.src;
-        document.querySelectorAll(".miniaturas img").forEach(img => {
-            img.classList.remove("activa");
-        });
-        elemento.classList.add("activa");
-        }
-        document.addEventListener("DOMContentLoaded", () => {
-        const primera = document.querySelector(".miniaturas img");
-        if (primera) primera.classList.add("activa");
-        });
-    </script>
-
     <script src="scripts.js"></script>
 </body>
 </html>

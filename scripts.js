@@ -87,23 +87,22 @@ if (botonMenu) {
         });
     });
 }
-
 // ⬆️ BOTÓN PARA IR ARRIBA
 // Mostrar botón solo cuando se baja
 window.addEventListener('scroll', () => {
-  const btn = document.getElementById('btn-ir-arriba');
-  if (window.scrollY > 400) {
-    btn.style.display = 'block';
-  } else {
-    btn.style.display = 'none';
-  }
-});
+    const btn = document.getElementById('btn-ir-arriba');
+    if (window.scrollY > 400) {
+        btn.style.display = 'block';
+    } else {
+        btn.style.display = 'none';
+    }
+    });
 
 // Al hacer clic, volver arriba suavemente
 document.getElementById('btn-ir-arriba').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    });
 

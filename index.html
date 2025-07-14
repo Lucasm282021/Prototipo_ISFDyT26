@@ -31,11 +31,11 @@
             </ul>
         </div>
     </nav>
-    <section id="institucional-banner" class="banner">
+<section id="institucional-banner" class="banner">
   <div class="banner-contenido">
-
-    <!-- Información Institucional -->
-    <article class="info-institucional" aria-label="Información del Instituto ISFDyT Nº 26">
+    
+    <!-- Columna 1: Información Institucional -->
+    <div class="columna info-institucional" aria-label="Información del Instituto ISFDyT Nº 26">
       <header>
         <h2>ISFDyT Nº 26</h2>
       </header>
@@ -43,7 +43,6 @@
       <p><strong>Teléfono:</strong> (02245) 44-3171</p>
       <p><strong>Email:</strong> contacto@isfdyt26.edu.ar</p>
       <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00</p>
-
       <section class="como-llegar" aria-label="Ubicación del instituto">
         <h3>📍 Cómo llegar</h3>
         <div class="mapa">
@@ -54,50 +53,50 @@
           </iframe>
         </div>
       </section>
-    </article>
+    </div>
 
-    <!-- Noticias y Galería -->
-    <section class="contenido-informativo" aria-label="Noticias y galería institucional">
-      <div class="noticias">
-        <header><h2>Últimas noticias</h2></header>
-        <ul>
-          <li>
-            <article>
-              <h3>Inscripciones abiertas</h3>
-              <p>Para el ciclo lectivo 2025.</p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Nuevo convenio</h3>
-              <p>Con la Universidad Nacional de Mar del Plata.</p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Jornada institucional</h3>
-              <p>Sobre prácticas profesionalizantes.</p>
-            </article>
-          </li>
-        </ul>
-      </div>
+    <!-- Columna 2: Noticias -->
+    <div class="columna noticias" aria-label="Noticias institucionales">
+      <header><h2>Últimas noticias</h2></header>
+      <ul>
+        <li>
+          <article>
+            <h3>Inscripciones abiertas</h3>
+            <p>Para el ciclo lectivo 2025.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Nuevo convenio</h3>
+            <p>Con la Universidad Nacional de Mar del Plata.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Jornada institucional</h3>
+            <p>Sobre prácticas profesionalizantes.</p>
+          </article>
+        </li>
+      </ul>
+    </div>
 
-      <div class="galeria-destacada">
-        <header><h2>Imágenes destacadas</h2></header>
-        <div class="slider-con-miniaturas">
-          <figure class="imagen-principal">
-            <img id="imagenActiva" src="Img/slide1.jpg" alt="Imagen destacada del instituto">
-          </figure>
-          <div class="miniaturas" role="list">
-            <img src="Img/slide1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)">
-            <img src="Img/slide2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
-            <img src="Img/slide3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
-          </div>
+    <!-- Columna 3: Galería -->
+    <div class="columna galeria-destacada" aria-label="Imágenes destacadas">
+      <header><h2>Imágenes destacadas</h2></header>
+      <div class="slider-con-miniaturas">
+        <figure class="imagen-principal">
+          <img id="imagenActiva" src="Img/slide1.jpg" alt="Imagen destacada del instituto">
+        </figure>
+        <div class="miniaturas" role="list">
+          <img src="Img/slide1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)">
+          <img src="Img/slide2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
+          <img src="Img/slide3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
         </div>
       </div>
-    </section>
+    </div>
 
   </div>
+  <button id="btn-ir-arriba" title="Ir arriba">⬆️</button>
 </section>
 
     <footer>
